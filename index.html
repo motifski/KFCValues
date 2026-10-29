@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101216">
+  <meta name="description" content="Explore your political values with KFCValues, an independent political ideology questionnaire.">
+  <title>KFCValues — Political Values Test</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="brand-link">
+      <span class="brand-mark">K</span>
+      <span>KFC<span class="accent">Values</span></span>
+    </a>
+    <span class="top-label">POLITICAL VALUES TEST</span>
+  </header>
+
+  <main class="app-shell">
+    <section id="home-screen" class="screen hero">
+      <div class="eyebrow"><span class="status-dot"></span> AN INDEPENDENT PROJECT</div>
+      <h1>Understand your<br>political <span class="accent">values.</span></h1>
+      <p class="hero-copy">
+        Explore your political outlook through a branching questionnaire.
+        Discover which political philosophy profiles most closely resemble
+        your answers, and see how your views compare across five dimensions.
+      </p>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-number">01</span>
+          <h3>Branching questions</h3>
+          <p>Your answers help determine which questions you see next.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">02</span>
+          <h3>Transparent scoring</h3>
+          <p>Review the dimensions and rules used to calculate your results.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">03</span>
+          <h3>Ideology profiles</h3>
+          <p>Compare your answers with a set of simplified political profiles.</p>
+        </article>
+      </div>
+      <button id="start-button" class="button button-primary button-large">
+        Start the test <span aria-hidden="true">→</span>
+      </button>
+      <p class="small-note">About 16 questions per run in this prototype. No account required.</p>
+      <p class="privacy-note">Your answers are processed in your browser and saved for this session.</p>
+    </section>
+
+    <section id="quiz-screen" class="screen hidden" aria-labelledby="question-title">
+      <div class="quiz-meta">
+        <span id="question-counter">QUESTION 1</span>
+        <span id="branch-label">QUESTION PATH</span>
+      </div>
+      <div
+        class="progress-track"
+        role="progressbar"
+        aria-label="Quiz progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        id="progress-track"
+      >
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="question-panel">
+        <div id="question-category" class="eyebrow">POLITICAL VALUES</div>
+        <h1 id="question-title" tabindex="-1">Question text</h1>
+        <p id="question-hint" class="question-hint">
+          Choose the answer that best reflects your view.
+        </p>
+        <div id="answer-list" class="answer-list" role="group" aria-label="Answer choices"></div>
+        <p id="answer-error" class="answer-error hidden" role="alert">
+          Please choose an answer before continuing.
+        </p>
+      </div>
+
+      <div class="quiz-footer">
+        <button id="back-button" class="button button-secondary">← Back</button>
+        <span id="answered-count" class="small-note">0 answered</span>
+        <button id="next-button" class="button button-primary">Continue →</button>
+      </div>
+    </section>
+
+    <section id="results-screen" class="screen hidden" aria-labelledby="results-title">
+      <div class="eyebrow"><span class="status-dot"></span> YOUR RESULTS</div>
+      <h1 id="results-title">Your political<br><span class="accent">profile.</span></h1>
+      <p class="hero-copy">
+        These profiles are comparisons against the definitions in KFCValues,
+        not definitive labels or scientific measurements.
+      </p>
+
+      <div id="match-list" class="match-list"></div>
+
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">YOUR DIMENSIONS</div>
+          <h2>Where your views fall</h2>
+        </div>
+      </div>
+      <div id="dimension-list" class="dimension-list"></div>
+
+      <div class="explanation-panel">
+        <div class="eyebrow">HOW YOUR RESULTS WERE CALCULATED</div>
+        <h2>Understanding your score</h2>
+        <p id="scoring-explanation"></p>
+        <p class="small-note">
+          Political philosophies contain internal disagreements and cannot be
+          fully described by five numbers. A similarity percentage only reflects
+          the simplified profiles and questions used in this version.
+        </p>
+      </div>
+
+      <div class="results-actions">
+        <button id="retake-button" class="button button-primary button-large">Retake the test ↻</button>
+        <button id="copy-button" class="button button-secondary button-large">Copy results</button>
+      </div>
+      <p id="copy-status" class="small-note" role="status"></p>
+    </section>
+
+    <section id="error-screen" class="screen hidden">
+      <div class="eyebrow">SOMETHING WENT WRONG</div>
+      <h1>We couldn't load the test.</h1>
+      <p id="error-message" class="hero-copy">
+        Check that app.js is in the same folder as index.html.
+      </p>
+      <button class="button button-primary" id="reload-button">Try again</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>KFCValues <span class="muted">/ Independent educational project</span></span>
+    <span>Explore ideas. Think critically.</span>
+  </footer>
+</body>
+</html>
